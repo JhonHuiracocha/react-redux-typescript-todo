@@ -9,7 +9,6 @@ const initialState: TodoState = {
       id: uuidv4(),
       desc: "First Todo",
       status: false,
-      createdAt: new Date(),
     },
   ],
 };
@@ -18,10 +17,10 @@ export const todosSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    addTodo: (state: TodoState, action: PayloadAction<Todo>) => {
+    addTodo: (state: TodoState, action: PayloadAction<Todo>): void => {
       state.todos.push(action.payload);
     },
   },
 });
 
-export const {} = todosSlice.actions;
+export const { addTodo } = todosSlice.actions;

@@ -2,8 +2,10 @@ export type Todo = {
   id: string;
   desc: string;
   status: boolean;
-  createdAt: Date;
-  updatedAt?: Date;
+};
+
+export type TodoForm = {
+  desc: string;
 };
 
 export type TodoState = {
