@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 import { Todo, TodoState } from "../../../interfaces";
 
 const initialState: TodoState = {
-  todosCounter: 1,
   todos: [
     {
       id: uuidv4(),
@@ -20,7 +19,6 @@ export const todosSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state: TodoState, action: PayloadAction<Todo>) => {
-      state.todosCounter += 1;
       state.todos.push(action.payload);
     },
   },

@@ -8,5 +8,4 @@ export type Todo = {
 
 export type TodoState = {
   todos: Todo[];
-  todosCounter: number;
 };
