@@ -1,7 +1,7 @@
 export type Todo = {
   id: string;
   desc: string;
-  status: boolean;
+  completed: boolean;
 };
 
 export type TodoForm = {

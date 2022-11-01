@@ -10,6 +10,7 @@ export const TodosPage: React.FC = (): JSX.Element => {
   return (
     <>
       <Link to="/new">New</Link>
+
       <TodoList todos={todos} />
     </>
   );

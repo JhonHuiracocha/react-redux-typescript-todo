@@ -23,7 +23,7 @@ export const TodoPage: React.FC = (): JSX.Element => {
     const newTodo: Todo = {
       id: uuidv4(),
       desc,
-      status: false,
+      completed: false,
     };
 
     dispatch(addTodo(newTodo));

@@ -7,8 +7,8 @@ const initialState: TodoState = {
   todos: [
     {
       id: uuidv4(),
-      desc: "First Todo",
-      status: false,
+      desc: "React toolkit",
+      completed: false,
     },
   ],
 };
@@ -20,7 +20,21 @@ export const todosSlice = createSlice({
     addTodo: (state: TodoState, action: PayloadAction<Todo>): void => {
       state.todos.push(action.payload);
     },
+    toggleTodo: (state: TodoState, action: PayloadAction<string>): void => {
+      const index: number = state.todos.findIndex(
+        ({ id }: Todo) => id === action.payload
+      );
+
+      state.todos[index].completed = !state.todos[index].completed;
+    },
+    deleteTodo: (state: TodoState, action: PayloadAction<string>): void => {
+      const index: number = state.todos.findIndex(
+        ({ id }: Todo) => id === action.payload
+      );
+
+      state.todos.splice(index, 1);
+    },
   },
 });
 
-export const { addTodo } = todosSlice.actions;
+export const { addTodo, deleteTodo, toggleTodo } = todosSlice.actions;
